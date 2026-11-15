@@ -110,13 +110,13 @@ def picks_from_set(d, medium, work=None):
         if not a or a.get("state") != "answered" or not a.get("choice"):
             skipped.append([qid, "unanswered"])
             continue
-        if not qq.get("media"):
+        if not (qq.get("media") or any(o.get("media") for o in qq.get("options", []))):
             skipped.append([qid, "no media (process decision)"])
             continue
         labels = {o.get("id"): o.get("label", o.get("id")) for o in qq.get("options", [])}
         choice = a["choice"]
         rest = [labels[k] for k in labels if k != choice and k not in ("none", "skip")]
-        r = make_row(medium, w, "%s: %s" % (qid, qq.get("title", "")), "pick",
+        r = make_row(medium, w, "%s: %s" % (qid, qq.get("title") or qq.get("prompt", "")), "pick",
                      words=a.get("note", ""), over="; ".join(rest) or None,
                      source=os.path.join(d, "answers.json").replace(os.sep, "/"),
                      date=(a.get("updated") or "")[:10] or None,

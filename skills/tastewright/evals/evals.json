@@ -1,17 +1,66 @@
 {
   "skill": "tastewright",
-  "triggers": ["pull my askwright picks into my taste record", "what do I actually like across art, music and film? one view", "remember that I hated the lens-talking in take 3 of the test film", "give the film plugin my taste profile before it writes prompts"],
+  "triggers": [
+    "pull my askwright picks into my taste record",
+    "what do I actually like across art, music and film? one view",
+    "remember that I hated the lens-talking in take 3 of the test film",
+    "give the film plugin my taste profile before it writes prompts"
+  ],
   "decoys": [
-    {"prompt": "remember I liked this music take, the flute one", "owner": "musicwright-curate"},
-    {"prompt": "which of these two images is better?", "owner": "artwright-judge"},
-    {"prompt": "make me a decision page for these clips", "owner": "askwright"},
-    {"prompt": "what font pairing fits my taste for the site", "owner": "sitewright-direction"},
-    {"prompt": "mine my chat history for design rules", "owner": "none"}
+    {
+      "prompt": "remember I liked this music take, the flute one",
+      "owner": "musicwright-curate"
+    },
+    {
+      "prompt": "which of these two images is better?",
+      "owner": "artwright-judge"
+    },
+    {
+      "prompt": "make me a decision page for these clips",
+      "owner": "askwright"
+    },
+    {
+      "prompt": "what font pairing fits my taste for the site",
+      "owner": "sitewright-direction"
+    },
+    {
+      "prompt": "mine my chat history for design rules",
+      "owner": "none"
+    }
   ],
   "actions": [
-    {"id": "A1", "prompt": "Import the askwright picks under proj and proj-wt into the taste record.", "evidence": "rows in TASTEWRIGHT_HOME/verdicts.jsonl only for answered media questions, no worktree duplicates, q1 words verbatim, q2 bare, q3 weak, nothing in the project"},
-    {"id": "A2", "prompt": "The owner says: 'take 3, they're talking to the camera again, reject it'. Record that verdict.", "evidence": "one row in the home with words verbatim; film repo git status clean"},
-    {"id": "A3", "prompt": "Show the owner's taste across art and music in one view.", "evidence": "sibling files read with sha256 unchanged; each line cites its source"}
+    {
+      "id": "A1",
+      "prompt": "Import the askwright picks under proj and proj-wt into the taste record.",
+      "evidence": "rows in TASTEWRIGHT_HOME/verdicts.jsonl only for answered media questions, no worktree duplicates, q1 words verbatim, q2 bare, q3 weak, nothing in the project"
+    },
+    {
+      "id": "A2",
+      "prompt": "The owner says: 'take 3, they're talking to the camera again, reject it'. Record that verdict.",
+      "evidence": "one row in the home with words verbatim; film repo git status clean"
+    },
+    {
+      "id": "A3",
+      "prompt": "Show the owner's taste across art and music in one view.",
+      "evidence": "sibling files read with sha256 unchanged; each line cites its source"
+    }
   ],
-  "baseline": {"date": "2026-11-15", "passed": 1, "failed": 2}
+  "baseline": {
+    "date": "2026-11-15",
+    "passed": 1,
+    "failed": 2
+  },
+  "with_skill": {
+    "date": "2026-11-15",
+    "passed": 3,
+    "failed": 0,
+    "note": "A1 passed after the option-level media fix in tw.py"
+  },
+  "worth": {
+    "date": "2026-11-15",
+    "verdict": "KEEP",
+    "always_tokens": 159,
+    "trigger_tokens": 713,
+    "baseline_failures_fixed": 2
+  }
 }
