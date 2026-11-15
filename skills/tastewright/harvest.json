@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "targets": [
+    {"kind": "github", "repo": "krispuckett/prefer", "keep": "changes in how taste is mined or stored; overlap with media verdicts"},
+    {"kind": "web", "query": "preference learning personal taste profile agent skill", "keep": "record formats, pairwise pick methods; drop recommender-system marketing"},
+    {"kind": "web", "query": "claude code skill taste profile verdicts", "keep": "new plugins that record a person's creative verdicts"},
+    {"kind": "sibling", "name": "askwright", "keep": "answers.json schema changes (fields used by tw.py import)"},
+    {"kind": "sibling", "name": "musicwright", "keep": "verdicts.jsonl schema changes"},
+    {"kind": "sibling", "name": "artwright", "keep": "calibration/labels.jsonl schema changes"}
+  ]
+}

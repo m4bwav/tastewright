@@ -1,0 +1,9 @@
+{
+  "name": "tastewright",
+  "version": "0.1.0",
+  "description": "One record of a person's taste verdicts across media (film, art, music, sfx, voice, pixel, site): their own words verbatim, dated, per work. tw.py adds verdicts, imports askwright picks with hygiene, and reads sibling plugins' records without rewriting them.",
+  "skills": "./skills",
+  "author": {"name": "Mark Rogers"},
+  "repository": "https://github.com/m4bwav/tastewright",
+  "license": "MIT"
+}

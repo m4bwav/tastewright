@@ -1,0 +1,29 @@
+{
+  "evergreen": "1.0",
+  "name": "tastewright",
+  "kind": "skill",
+  "main": "SKILL.md",
+  "files": {"research": "RESEARCH.md", "changelog": "CHANGELOG.md", "learnings": "LEARNINGS.md", "tests": "TESTS.md"},
+  "protocol": "plugin",
+  "source": null,
+  "topic": "Recording a person's creative taste verdicts across media; sibling record formats (askwright, musicwright, artwright)",
+  "tier": "slow",
+  "interval_days": 60,
+  "last_checked": "2026-11-15",
+  "next_due": "2027-01-14",
+  "verify_at_use": false,
+  "search_plan": "harvest.json targets: prefer repo, taste-profile skills, sibling schema changes",
+  "volatile_claims": [
+    {"claim": "askwright answers.json keeps choice, note, state, updated, guess_revealed_before_pick per question", "checked": "2026-11-15", "recheck_days": 60},
+    {"claim": "musicwright verdicts.jsonl rows are {type, date, take, verdict, note, by, recipe}", "checked": "2026-11-15", "recheck_days": 60},
+    {"claim": "artwright calibration/labels.jsonl rows are {a, b, pick, by, note, at}", "checked": "2026-11-15", "recheck_days": 60},
+    {"claim": "No other public plugin records media taste verdicts from askwright picks (prefer is UI text only)", "checked": "2026-11-15", "recheck_days": 90}
+  ],
+  "contradiction": null,
+  "events": [],
+  "streak": {"quiet": 0, "pinned_min": 0, "pinned_max": 0, "vau_quiet": 0},
+  "history": [{"date": "2026-11-15", "m": null, "interval_after": 60, "note": "created"}],
+  "counts": {"learnings": 7, "changes": 1, "research": 1, "tests": 1},
+  "consolidate_every": 25,
+  "tests": {"last_run": "2026-11-15", "harness": "claude-code (bare baseline)", "env": "baseline", "cases": 12, "passed": 1, "failed": 2, "failing": ["A1", "A2"], "last_failure": "2026-11-15", "research_after_days": null}
+}
