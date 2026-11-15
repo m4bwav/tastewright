@@ -89,6 +89,22 @@ class TwTest(unittest.TestCase):
         self.assertEqual(rows["q1"]["over"], "Take 2")
         self.assertEqual(run("import", a, "--medium", "film")["added"], 0)
 
+    def test_import_option_media(self):
+        d = os.path.join(self.tmp, "opt", "s1")
+        os.makedirs(d)
+        q = {"askwright": 1, "title": "Ships", "questions": [
+            {"id": "q1", "kind": "pick", "prompt": "Which ship?", "options": [
+                {"id": "t1", "label": "Flat", "media": "t1.png"}, {"id": "t2", "label": "Glossy", "media": "t2.png"}]},
+            {"id": "c1", "kind": "pick", "prompt": "Retry?", "options": [{"id": "y", "label": "Yes"}, {"id": "n", "label": "No"}]}]}
+        a = {"answers": {"q1": {"choice": "t1", "note": "", "state": "answered", "updated": "2026-11-02T20:11:00"},
+                         "c1": {"choice": "y", "note": "", "state": "answered", "updated": "2026-11-02T20:11:00"}}}
+        for n, o in (("questions.json", q), ("answers.json", a)):
+            with open(os.path.join(d, n), "w", encoding="utf-8") as fh:
+                json.dump(o, fh)
+        r = run("import", d, "--medium", "pixel", "--dry-run")
+        self.assertEqual(r["would_add"], 1)  # option-level media counts; c1 is a process question
+        self.assertIn("Which ship?", r["rows"][0]["item"])
+
     def test_siblings_read_not_written(self):
         mh = os.path.join(self.tmp, "music")
         os.makedirs(mh)

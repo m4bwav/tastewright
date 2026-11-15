@@ -9,3 +9,5 @@ General lessons only. Lessons about one owner's taste live in the private home (
 - L-005 `process-vs-taste` (2026-11-15): about 41 of 140 answered askwright sets were process or plugin decisions, not taste. A question with no media is treated as process. Source: harvest, section 3.
 - L-006 `close-pairs-have-a-pick` (2026-11-15): when an automatic judge ties two close takes, the person often still has a clear pick; show them. Source: artwright taste record (calibration picks).
 - L-007 `simple-questions` (2026-11-15): verdicts come in best from many simple questions with side-by-sides and a guess. Source: review-method preference in the harvest.
+
+- 2026-11-15 `askwright-option-media`: askwright questions may carry media on each option instead of the question; an importer that checks only `question.media` silently drops every pick as a process decision. Check both.
