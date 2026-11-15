@@ -1,0 +1,24 @@
+{
+  "tastewright": "banner",
+  "route": "comfyui",
+  "host": "local ComfyUI",
+  "model": "FLUX.3 Klein distilled (flux3-image-klein-int8-convrot) + qwen3vl_4b text encoder + flux2-vae",
+  "prompt": "Wide cinematic banner of a quiet critic's studio at dusk. A long wooden table holds a neat row of small framed pictures, a film reel, a vinyl record, a cassette, and a few pixel-art cards, each with a small blank paper tag tied to it; a fountain pen and an open notebook with blank ruled pages rest in front. Some tags are marked with a simple green check shape, some with a red cross shape. Warm amber desk lamp light, deep teal shadows, painterly detailed illustration, calm and orderly, plenty of calm empty space, clean uncluttered composition, no lettering, no text, no readable words, no logos.",
+  "seed": 71101,
+  "size": {
+    "w": 1536,
+    "h": 640
+  },
+  "steps": 16,
+  "cfg": 1.0,
+  "sampler": "euler",
+  "scheduler": "simple",
+  "output": {
+    "format": "jpeg",
+    "quality": 88
+  },
+  "candidates": [
+    71101,
+    71102
+  ]
+}
