@@ -2,7 +2,7 @@
 
 ![tastewright banner](.github/images/banner.jpg)
 
-A Claude Code plugin that keeps one record of your taste verdicts across media: films, images, music, sound effects, voices, pixel art and sites. Each verdict is your own call (keep, reject, maybe or pick) with the date, the work and your words exactly as you said them.
+An agent plugin that keeps one record of your taste verdicts across media: films, images, music, sound effects, voices, pixel art and sites. Each verdict is your own call (keep, reject, maybe or pick) with the date, the work and your words exactly as you said them.
 
 - `tw.py add` records a verdict you just gave.
 - `tw.py import` pulls answered picks from askwright decision pages, skipping unanswered and process questions and duplicate copies.
